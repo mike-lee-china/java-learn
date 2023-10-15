@@ -77,3 +77,14 @@ Caused by: java.lang.ClassNotFoundException: ///out/HelloWorld
 
 咦，出现了什么？找不到！！！why？Linux 下程序不都是这么执行的吗？g++、clang 编译的 C/C++ 程序不都是可以吗？Python 也行，shell 脚本都没问题，javac 编译出来的为什么不行？凭什么！！！
 
+我们再进入到 out 目录下执行一下：
+
+``` bash
+$ cd ../out/
+$ java HelloWorld
+Hello Wrold
+```
+
+又可以了，为什么是这样？我们看看提示和尝试的结果，那就是我们通过参数传递给 java 路径是不生效的，也就是 java 路径搜索并不和 bash 一样，并不是指定路径去执行，而是有自己的执行逻辑，这个逻辑我们先放一边，后面肯定要了解，我们先搞花活儿，用 java 命令把非当前路径的 class 执行起来。
+
+java命令的使用
